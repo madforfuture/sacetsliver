@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sacet Rajathostav 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* LUXURY VARIABLES */
+:root {
+    --gold: #ffd700;
+    --silver: #e5e4e2;
+    --platinum: linear-gradient(to right, #ffffff, #a6a6a6, #ffffff);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+    color:white;
+    overflow-x: hidden;
+}
+
+/* FLOATING GOLD & SILVER DUST PARTICLES */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.08) 1.5px, transparent 1.5px),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 2px, transparent 2px);
+    background-size: 100px 100px;
+    animation: dustMove 25s linear infinite;
+    z-index: -1;
+}
+
+@keyframes dustMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-1000px); }
+}
+
+/* NAVBAR - Glassmorphism */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    padding:20px 60px;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(15px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+    z-index:1000;
+}
+
+nav h1{
+    font-family: 'Playfair Display', serif;
+    background: var(--platinum);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 24px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO SECTION */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+}
+
+.hero h2{
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 10vw, 80px);
+    background: linear-gradient(to right, #fff 20%, #ffd700 40%, #ffd700 60%, #fff 80%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shineEffect 4s linear infinite;
+    text-transform: uppercase;
+}
+
+@keyframes shineEffect {
+    to { background-position: 200% center; }
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+    color:#ccc;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+/* LUXURY BUTTON */
+.btn{
+    margin-top:30px;
+    padding:18px 45px;
+    background: linear-gradient(45deg, #ffd700, #fff, #ffd700);
+    background-size: 200% auto;
+    color:black;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-weight:700;
+    text-transform: uppercase;
+    transition: 0.5s;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.btn:hover{
+    transform:scale(1.05) translateY(-3px);
+    background-position: right center;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* SECTION GLOBAL STYLE */
+.section{
+    padding:120px 80px;
+    text-align:center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h3{
+    font-family: 'Playfair Display', serif;
+    font-size:45px;
+    margin-bottom:30px;
+    color: var(--silver);
+}
+
+/* ABOUT CONTENT */
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #bbb;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* EVENTS GRID */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+/* THE PREMIUM CARD EFFECT */
+.card{
+    background:rgba(255,255,255,0.03);
+    padding:40px 30px;
+    border-radius:20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition:0.5s cubic-bezier(0.2, 1, 0.3, 1);
+    text-decoration:none;
+    color:white;
+    display:block;
+    position: relative;
+    overflow: hidden;
+}
+
+.card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.card:hover{
+    transform:translateY(-15px);
+    background:rgba(255,255,255,0.08);
+    border-color: var(--gold);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* ADD A TINY GLINT TO CARDS ON HOVER */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 100%;
+}
+
+/* FOOTER */
+footer{
+    padding:60px;
+    text-align:center;
+    background:black;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    color: #666;
+    letter-spacing: 1px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav { padding: 20px; }
+    nav div { display: none; }
+    .hero h2 { font-size: 42px; }
+    .section { padding: 80px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <h1>st.ann's collage of engineering and technology ,chirala</h1>
+    <div>
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h2>Sacet rajathostav</h2>
+    <p>Celebrating 25 Years</p>
+    <a href="#events">
+        <button class="btn">Explore Events</button>
+    </a>
+</section>
+
+<section id="about" class="section">
+    <h3>About The Event</h3>
+    <p>
+        Join us for a grand celebration filled with innovation, creativity, and culture.
+        Experience technical competitions, cultural events, and networking opportunities.
+        Our Silver Jubilee marks a quarter-century of academic and creative brilliance.
+    </p>
+</section>
+
+<section id="events" class="section">
+    <h3>Our Events</h3>
+
+    <div class="cards">
+
+        <a href="paper-presentation.html" class="card">
+            <h4>Paper Presentation</h4>
+            <p>Present your research ideas to a panel of experts.</p>
+        </a>
+
+        <a href="technical-quiz.html" class="card">
+            <h4>Technical Quiz</h4>
+            <p>Test your speed and technical knowledge under pressure.</p>
+        </a>
+
+        <a href="hackathon.html" class="card">
+            <h4>Hackathon</h4>
+            <p>The ultimate 24-hour coding challenge for developers.</p>
+        </a>
+
+        <a href="idea-pitch.html" class="card">
+            <h4>Idea Pitch</h4>
+            <p>Pitch your innovative business ideas to investors.</p>
+        </a>
+
+        <a href="project-expo.html" class="card">
+            <h4>Project Expo</h4>
+            <p>Showcase your hardware or software prototypes.</p>
+        </a>
+
+        <a href="cultural-night.html" class="card">
+            <h4>Cultural Night</h4>
+            <p>A grand finale of dance, music, and entertainment.</p>
+        </a>
+
+    </div>
+
+</section>
+
+<footer id="contact">
+    <p>© 2026 Sacet Rajathostav | Silver Jubilee Edition</p>
+</footer>
+
+</body>
+</html>
